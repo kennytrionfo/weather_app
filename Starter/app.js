@@ -1,6 +1,11 @@
 /////////////////////////========MODULES, with any services as dependencies=======\\\\\\\\\\\\\\\\\\\\\\\\\\\
 var weatherApp = angular.module('weatherApp', ['ngRoute', 'ngResource']);
 
+/////////////////////////========SERVICES=======\\\\\\\\\\\\\\\\\\\\\\\\\\\
+weatherApp.service('cityService', function() {
+	this.city = 
+})
+
 /////////////////////////========CONTROLLERS=======\\\\\\\\\\\\\\\\\\\\\\\\\\\
 weatherApp.controller('homeController', ['$scope', function($scope){
 
