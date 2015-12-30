@@ -28,11 +28,18 @@ weatherApp.controller('forcastController', ['$scope', '$resource', 'cityService'
 				}
 		}
 	);
+
 		$scope.weatherResult = $scope.weatherApi.get( 
 			{
 				q: $scope.city,
 				cnt: 2	
 			});
+
+		$scope.convertToFahrenheit = function(degK) 
+			{
+			return Math.round((1.8 * (degK - 273)) + 32); 
+			}
+			
 		console.log($scope.weatherResult);
 }]);
 
