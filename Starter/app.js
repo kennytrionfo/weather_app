@@ -65,5 +65,30 @@ weatherApp.config(function ($routeProvider){
 			controller: 'forecastController'
 		})
 
+});
+
+/////////////////////////========DIRECTIVES=======\\\\\\\\\\\\\\\\\\\\\\\\\\\
+weatherApp.directive("weatherReport", function() {
+	return {
+		restrict: 'E', 
+		templateUrl: 'directtives/weatherReport.html',
+		replace: true, 
+		scope: {
+			weatherDay: "=", 
+			convertToStandard: "&",
+			convertToDate: "&",
+			dateFormat: "@"
+		}
+	}
 })
+
+
+
+
+
+
+
+
+
+
 
