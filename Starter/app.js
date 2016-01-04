@@ -14,12 +14,13 @@ weatherApp.controller('homeController', ['$scope', 'cityService', function($scop
 	});
 }]);
 
-weatherApp.controller('forcastController', ['$scope', '$resource', 'cityService', function($scope, $resource, cityService){
+weatherApp.controller('forcastController', ['$scope', '$resource', '$routeParams', 'cityService', function($scope, $resource, $routeParams, cityService){
 	$scope.city = cityService.city;
+	$scope.days = $routeParams.days || 2;
 	$scope.weatherApi = 
 		$resource("http://api.openweathermap.org/data/2.5/forecast/daily?APPID=d8f5102c89d08caf442ba64a6bcda871", 
 		{
-			callback: "JSON_CALLBACK" 
+			callback: "JSON_CALLBACK" //this and the method below just says "it's ok to get this data. it's not a hack attempt."
 		},
 		{
 			get: 
@@ -39,7 +40,12 @@ weatherApp.controller('forcastController', ['$scope', '$resource', 'cityService'
 			{
 			return Math.round((1.8 * (degK - 273)) + 32); 
 			}
-			
+		
+		$scope.convertToDate = function(dt) 
+			{
+				return new Date(dt * 1000);
+			}			
+
 		console.log($scope.weatherResult);
 }]);
 
@@ -54,5 +60,10 @@ weatherApp.config(function ($routeProvider){
 			templateUrl: 'pages/forcast.htm',
 			controller: 'forcastController'
 		})
+		.when('/forcast/:days', {
+			templateUrl: 'pages/forcast.htm',
+			controller: 'forcastController'
+		})
+
 })
 
