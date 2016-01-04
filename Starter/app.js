@@ -3,7 +3,7 @@ var weatherApp = angular.module('weatherApp', ['ngRoute', 'ngResource']);
 
 /////////////////////////========SERVICES=======\\\\\\\\\\\\\\\\\\\\\\\\\\\
 weatherApp.service('cityService', function() {
-	this.city = "New York, NY";
+	this.city = "Cocoa Beach, FL";
 })
 
 /////////////////////////========CONTROLLERS=======\\\\\\\\\\\\\\\\\\\\\\\\\\\
@@ -14,7 +14,7 @@ weatherApp.controller('homeController', ['$scope', 'cityService', function($scop
 	});
 }]);
 
-weatherApp.controller('forcastController', ['$scope', '$resource', '$routeParams', 'cityService', function($scope, $resource, $routeParams, cityService){
+weatherApp.controller('forecastController', ['$scope', '$resource', '$routeParams', 'cityService', function($scope, $resource, $routeParams, cityService){
 	$scope.city = cityService.city;
 	$scope.days = $routeParams.days || 2;
 	$scope.weatherApi = 
@@ -33,7 +33,7 @@ weatherApp.controller('forcastController', ['$scope', '$resource', '$routeParams
 		$scope.weatherResult = $scope.weatherApi.get( 
 			{
 				q: $scope.city,
-				cnt: 2	
+				cnt: $scope.days
 			});
 
 		$scope.convertToFahrenheit = function(degK) 
@@ -56,13 +56,13 @@ weatherApp.config(function ($routeProvider){
 			templateUrl: 'pages/home.htm',
 			controller: 'homeController'
 		})
-		.when('/forcast', {
-			templateUrl: 'pages/forcast.htm',
-			controller: 'forcastController'
+		.when('/forecast', {
+			templateUrl: 'pages/forecast.htm',
+			controller: 'forecastController'
 		})
-		.when('/forcast/:days', {
-			templateUrl: 'pages/forcast.htm',
-			controller: 'forcastController'
+		.when('/forecast/:days', {
+			templateUrl: 'pages/forecast.htm',
+			controller: 'forecastController'
 		})
 
 })
