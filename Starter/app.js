@@ -29,7 +29,7 @@ weatherApp.controller('forecastController', ['$scope', '$resource', '$routeParam
 				}
 		}
 	);
-
+ 
 		$scope.weatherResult = $scope.weatherApi.get( 
 			{
 				q: $scope.city,
