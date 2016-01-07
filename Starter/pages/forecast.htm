@@ -10,7 +10,11 @@ Days: <a href="#/forecast/2" ng-class="{'bg-primary': days === '2' }"  >2</a> | 
 <div ng-repeat="w in weatherResult.list" style="background: green">
 	<div class="row" stlye="background: lightgreen" >
 		<div class="col-md-6" style="background: darkorange"  >
-			<weather-report weather-day="w"></weather-report>
+			<weather-report 
+				weather-day="w" 
+				convert-to-standard="convertToFahrenheit(daytimeTemp)" 
+				convert-to-date="convertToDate(dt)" date-format="MMM d, y" >
+			</weather-report>
 		</div>
 	</div>
 </div>

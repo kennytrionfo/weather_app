@@ -19,16 +19,16 @@ weatherApp.controller('forecastController', ['$scope', '$resource', '$routeParam
 	$scope.days = $routeParams.days || '2';
 	$scope.weatherApi = 
 		$resource("http://api.openweathermap.org/data/2.5/forecast/daily?APPID=d8f5102c89d08caf442ba64a6bcda871", 
-		{
-			callback: "JSON_CALLBACK" //this and the method below just says "it's ok to get this data. it's not a hack attempt."
-		},
-		{
-			get: 
-				{
-					method: "JSONP"
-				}
-		}
-	);
+			{
+				callback: "JSON_CALLBACK" //this and the method below just says "it's ok to get this data. it's not a hack attempt."
+			},
+			{
+				get: 
+					{
+						method: "JSONP"
+					}
+			}
+		);
  
 		$scope.weatherResult = $scope.weatherApi.get( 
 			{
@@ -39,13 +39,14 @@ weatherApp.controller('forecastController', ['$scope', '$resource', '$routeParam
 		$scope.convertToFahrenheit = function(degK) 
 			{
 			return Math.round((1.8 * (degK - 273)) + 32); 
-			}
+			};
 		
 		$scope.convertToDate = function(dt) 
 			{
 				return new Date(dt * 1000);
-			}			
+			};	
 
+			// console.log($scope.convertToFahrenheit(100) );
 		console.log($scope.weatherResult);
 }]);
 
@@ -64,15 +65,14 @@ weatherApp.config(function ($routeProvider){
 			templateUrl: 'pages/forecast.htm',
 			controller: 'forecastController'
 		})
-
 });
 
 /////////////////////////========DIRECTIVES=======\\\\\\\\\\\\\\\\\\\\\\\\\\\
 weatherApp.directive("weatherReport", function() {
 	return {
 		restrict: 'E', 
-		templateUrl: 'directtives/weatherReport.html',
-		replace: true, 
+		templateUrl: 'directives/weatherReport.html',
+		replace: true,  
 		scope: {
 			weatherDay: "=", 
 			convertToStandard: "&",
