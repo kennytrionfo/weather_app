@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html ng-app="featherApp">
+<head>
+	<title>Feather Weather</title>
+<!-- /////////////////////////========METAs=======\\\\\\\\\\\\\\\\\\\\\\\\\\\ -->
+	<meta charset="utf-8">
+<!-- /////////////////////////========LINKS: Bootstrap, Fontawsome etc =======\\\\\\\\\\\\\\\\\\\\\\\\\\\ -->
+	<link rel="stylesheet" type="text/css" href="../bower_components/bootstrap/dist/css/bootstrap.min.css">
+<!-- /////////////////////////========SCRIPTS: JS, Ang, Jquery etc=======\\\\\\\\\\\\\\\\\\\\\\\\\\\ -->
+	<script type="text/javascript" src="../bower_components/angular/angular.min.js"> </script>
+	<script type="text/javascript" src="../bower_components/angular-route/angular-route.min.js"> </script>
+	<script type="text/javascript" src="../bower_components/angular-resource/angular-resource.min.js"> </script>
+	<script type="text/javascript" src="feather_app.js"> </script>
+</head>
+<body>
+	<div class="navbar navbar-default "  >
+		<div class="container "  >
+			<div class="navbar-header "  >
+				<a href="/" class="navbar-brand " >Feather Weather</a>
+			</div>
+			<ul class="nav navbar-nav navbar-right "  >
+				<li>
+					<a href="#/"><i class="fa fa-home "  ></i>Homie </a>
+				</li>
+			</ul>
+		</div>
+	</div> 
+	<div class="container "  >
+		<div ng-view >	</div>
+	</div>
+</body>
+</html>
