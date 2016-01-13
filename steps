@@ -163,7 +163,7 @@ Add some numbers that we can click on to choose how many days to display:
 			Add a new route that accepts a days parameter by: 
 				Creating a pattern match that looks for a variable name after the /forecast with: 
 					:days so a third route should look like this: 
-							.when('/forecast', {
+							.when('/forecast/:days', {
 								templateUrl: 'pages/forecast.htm',
 								controller: 'forecastController'
 							});
