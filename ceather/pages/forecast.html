@@ -1,1 +1,15 @@
+<p>
+	<a href="#/">Back to Search</a>
+</p>
+
 Forecast for: {{city}}
+<hr>
+Days: <a href="#/forecast/1">1</a> | <a href="#/forecast/2">2</a> | <a href="#/forecast/3">3</a>
+<hr>
+<div ng-repeat="w in weatherResult.list"  >
+	<div class="row "  >
+		<div class="md-col-12 "  >
+			<weather-result weather-day="w" ></weather-result>
+		</div>
+	</div>
+</div>
