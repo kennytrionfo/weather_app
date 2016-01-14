@@ -13,7 +13,7 @@ app.controller('homeController', ['$scope',  'cityService', function($scope,  ci
 
 app.controller('forecastController', ['$scope', '$resource', '$routeParams', 'cityService', function($scope, $resource, $routeParams, cityService ){
 	$scope.city = cityService.city;
-	$scope.days = $routeParams.days || 2;
+	$scope.days = $routeParams.days || '2';
 	$scope.weatherApi = 
 		$resource("http://api.openweathermap.org/data/2.5/forecast/daily?APPID=d8f5102c89d08caf442ba64a6bcda871", 
 			{
@@ -60,6 +60,13 @@ app.service('cityService', function(){
 
 /////////////////////////========DIRECTIVES=======\\\\\\\\\\\\\\\\\\\\\\\\\\\
 app.directive('tempPanel', function(){
-	
+	return {
+		restrict: 'E',
+		templateUrl: 'directives/temp_panel.html',
+		replace: true,
+		scope: {
+			weatherPanel: "="
+		}
+	}
 })
 

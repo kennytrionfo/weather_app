@@ -6,7 +6,7 @@ Days: <a href="#/forecast/2" ng-class="{'bg-primary': days === '2'}" >2</a> | <a
 <div ng-repeat="w in weatherResult.list"  >
 	<div class="row "  >
 		<div class="md-col-12 "  >
-			<temp-panel ></temp-panel>
+			<temp-panel weather-panel="w"></temp-panel>
 		</div>
 	</div>
 </div>
