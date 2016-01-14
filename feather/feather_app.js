@@ -58,5 +58,8 @@ app.service('cityService', function(){
 	this.city = "Sebastian, FL";
 });
 
-
+/////////////////////////========DIRECTIVES=======\\\\\\\\\\\\\\\\\\\\\\\\\\\
+app.directive('tempPanel', function(){
+	
+})
 

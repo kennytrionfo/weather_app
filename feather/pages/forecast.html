@@ -1,18 +1,12 @@
+<p><a href="#/">Back to Search</a></p>
 Forecast for: {{city}}
 <hr/>
-<a href="#/forecast/2">2</a> | <a href="#/forecast/3">3</a> | <a href="#/forecast/4">4</a>
+Days: <a href="#/forecast/2" ng-class="{'bg-primary': days === '2'}" >2</a> | <a href="#/forecast/3" ng-class="{'bg-primary': days === '3'}" >3</a> | <a href="#/forecast/4" ng-class="{'bg-primary': days === '4'}" >4</a>
 <hr/>
 <div ng-repeat="w in weatherResult.list"  >
 	<div class="row "  >
 		<div class="md-col-12 "  >
-
-			<div class="panel panel-default "  >
-				<div class="panel-heading "  >
-					<h3 class="panel-title "> Date: {{w.dt}}</h3> 
-				</div>
-				<div class="panel-body "  >Daytime Temp: {{w.temp.day}}	</div>
-			</div>
-
+			<temp-panel ></temp-panel>
 		</div>
 	</div>
 </div>
