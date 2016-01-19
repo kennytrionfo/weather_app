@@ -12,8 +12,8 @@ Create an HTML FILE with Meta, Links and Scripts in the head:
   <script src="../bower_components/angular-route/angular-route.min.js"></script>
   <script src="../bower_components/angular-resource/angular-resource.min.js"></script>
   <script src="app.js"></script>  
-
 Create a MAIN JS file: 
+
 
 Create a HEADER	in the body of ur html file using bootstrap with a navbar nav, with a container div in it, with a navbar-header div and nav ul in it:
 	<header>
