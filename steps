@@ -23,7 +23,7 @@ Create a HEADER	in the body of ur html file using bootstrap with a navbar nav, w
 				<a href="/" class="navbar-brand "  >Beather</a>
 			</div>
 			<ul class="nav navbar-nav navbar-right "  >
-				<li><a href="#"><i class="fa fa-home "  ></i> Home</a> </li>
+				<li><a href="#/"><i class="fa fa-home "  ></i> Home</a> </li>
 			</ul>
 		</div>
 		</nav>
@@ -54,14 +54,14 @@ USE THE ANGULAR DEPENDENCIES by declaring them:
 SET UP ROUTING for SPA that has two pages, a home & a forcast page. 
 	Create two htm pages inside of a new pages folder. 
 	Create two controllers:
-		beatherApp.controller('homeController', ['$scope', function($scope){
+		app.controller('homeController', ['$scope', function($scope){
 		}]);
 
 		beatherApp.controller('forcastController', ['$scope', function($scope){
 		}]);
 	Create routes to connect them. 
 		In ur app.js file: 
-			beatherApp.config(function ($routeProvider){
+			app.config(function ($routeProvider){
 			$routeProvider
 			.when('/', {
 				templateUrl: 'pages/home.htm',
