@@ -9,8 +9,9 @@ app.controller('homeController', ['$scope', 'cityService', function($scope, city
 
 }]);
 
-app.controller('forecastController', ['$scope', '$resource', 'cityService', function($scope, $resource, cityService){
+app.controller('forecastController', ['$scope', '$resource', '$routeParams', 'cityService', function($scope, $resource, $routeParams, cityService){
 	$scope.city = cityService.city;
+	$scope.days = $routeParams.days || '2';
 	$scope.weatherApi = 
 	$resource("http://api.openweathermap.org/data/2.5/forecast/daily?APPID=d8f5102c89d08caf442ba64a6bcda871", 
 		{
@@ -26,7 +27,7 @@ app.controller('forecastController', ['$scope', '$resource', 'cityService', func
 	$scope.weatherResult = $scope.weatherApi.get(
 	{
 		q: $scope.city,
-		cnt: 2
+		cnt: $scope.days
 	});
 // console.log($scope.weatherResult );
 }]);
@@ -43,12 +44,24 @@ app.config(function ($routeProvider){
 			templateUrl: 'pages/forecast.html',
 			controller: 'forecastController'
 		})
+		.when('/forecast/:days',{
+			templateUrl: 'pages/forecast.html',
+			controller: 'forecastController'
+		})
 });
+
 /////////////////////////========SERVICES=======\\\\\\\\\\\\\\\\\\\\\\\\\\\
 app.service('cityService', function(){
 	this.city = "Del Ray, FL";
 });
 
-
+/////////////////////////========DIRECTIVES=======\\\\\\\\\\\\\\\\\\\\\\\\\\\
+app.directive('weatherReport', function(){
+	return {
+		restrict: 'E',
+		templateUrl: 'directives/weatherReport.html',
+		replace: true,
+	}
+})
 
 

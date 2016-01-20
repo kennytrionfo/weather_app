@@ -170,7 +170,7 @@ Pretty up the dates and temps:
 	By creating some methods that format the date and time nicer...
 	*** This is not done in these steps. Maybe fill in later. Skip for now. 
 	Should look like this when done? :
-	
+
 Add some numbers that we can click on to choose how many days to display: 
 	Make it so you can pass a number to the url as a parameter: 
 		In routes:
@@ -217,7 +217,7 @@ Make the date and temp panel html a CUSTOM DIRECTIVE:
 			restrict: 'E', 
 			to the return object. 
 		Add the templateUrl to the return object:
-			templateUrl: 'directives/weatherReport.html',
+			templateUrl: 'directives/weatherResult.html',
 		Make it so the contents of the directive replace the placeholder completely with: 
 			replace: true,
 		Isolate the scope by: 
