@@ -56,12 +56,14 @@ app.service('cityService', function(){
 });
 
 /////////////////////////========DIRECTIVES=======\\\\\\\\\\\\\\\\\\\\\\\\\\\
-app.directive('weatherReport', function(){
+app.directive("weatherResult", function(){
 	return {
 		restrict: 'E',
 		templateUrl: 'directives/weatherReport.html',
-		replace: true,
+		// replace: true,
+		weatherDay: "="
 	}
 })
+
 
 

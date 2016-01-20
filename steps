@@ -207,7 +207,7 @@ Make the date and temp panel html a CUSTOM DIRECTIVE:
 	Create a new file in it called weatherReport.html
 	Cut and paste the panel html from the forecast page into the new custom directive html page. 
 	Define/create the custom directive in ur js file: 
-		beatherApp.directive("weatherReport", function() {
+		beatherApp.directive("weatherResult", function() {
 			return {
 		
 			}
@@ -217,7 +217,7 @@ Make the date and temp panel html a CUSTOM DIRECTIVE:
 			restrict: 'E', 
 			to the return object. 
 		Add the templateUrl to the return object:
-			templateUrl: 'directives/weatherResult.html',
+			templateUrl: 'directives/weatherReport.html',
 		Make it so the contents of the directive replace the placeholder completely with: 
 			replace: true,
 		Isolate the scope by: 
@@ -232,6 +232,7 @@ Make the date and temp panel html a CUSTOM DIRECTIVE:
 
 Move ur Routes, services, controllers and directives to a routes.js file and add a script to it on ur index html page after the app.js script.
 
+----End----
 
 
 
