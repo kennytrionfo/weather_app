@@ -1,1 +1,13 @@
-forecast.html
+Forcast for: {{city}}
+
+<div ng-repeat="w in weatherResult.list"  >
+
+</div>
+
+<div ng-repeat="w in weatherResult.list"  >
+	<div class="row "  >
+		<div class="md-col-12 "  >
+			<temp-panel weather-panel="w"></temp-panel>
+		</div>
+	</div>
+</div>

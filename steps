@@ -83,7 +83,7 @@ Create a FORM with an input box and button on the home page:
 		<div class="col-md-6 col-md-offset-3" style="background: lightyellow">
 			<h4>Forecast by City </h4>
 			<div class="form-group"  >
-				<input type="text" class="form-control" ng-model="city"  />
+				<input type="text" class="form-control"  />
 			</div>
 			<a href="#/forecast" class="btn btn-primary" >Get Forecast</a>
 
@@ -152,6 +152,14 @@ Bind this data to the screen by repeating each line of data in the list:
 	a panel-title h3 inside of that which has the date interpolated in it and 
 	under the panel-heading div, a panel-body div with the daytime temp interpolated inside of it: 
 	rf
+	should look like this:
+		<div ng-repeat="w in weatherResult.list"  >
+			<div class="row "  >
+				<div class="md-col-12 "  >
+					<temp-panel weather-panel="w"></temp-panel>
+				</div>
+			</div>
+		</div>
 
 Pretty up the dates and temps:
 	By creating some methods...
