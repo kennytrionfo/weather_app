@@ -1,13 +1,15 @@
 Forcast for: {{city}}
-
-<div ng-repeat="w in weatherResult.list"  >
-
-</div>
+<hr/>
 
 <div ng-repeat="w in weatherResult.list"  >
 	<div class="row "  >
 		<div class="md-col-12 "  >
-			<temp-panel weather-panel="w"></temp-panel>
+			<div class="panel panel-default "  >
+				<div class="panel-heading "  >
+					<h3 class="panel-title "> Date: {{w.dt}}</h3> 
+				</div>
+				<div class="panel-body "  >Daytime Temp: {{w.temp.day}}	</div>
+			</div>
 		</div>
 	</div>
 </div>

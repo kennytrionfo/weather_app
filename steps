@@ -151,20 +151,26 @@ Bind this data to the screen by repeating each line of data in the list:
 	panel-heading inside of that and 
 	a panel-title h3 inside of that which has the date interpolated in it and 
 	under the panel-heading div, a panel-body div with the daytime temp interpolated inside of it: 
-	rf
+	rf and should see 2 panels.
 	should look like this:
 		<div ng-repeat="w in weatherResult.list"  >
 			<div class="row "  >
 				<div class="md-col-12 "  >
-					<temp-panel weather-panel="w"></temp-panel>
+					<div class="panel panel-default "  >
+						<div class="panel-heading "  >
+							<h3 class="panel-title "> Date: {{w.dt}}</h3> 
+						</div>
+						<div class="panel-body "  >Daytime Temp: {{w.temp.day}}	</div>
+					</div>
 				</div>
 			</div>
 		</div>
 
 Pretty up the dates and temps:
-	By creating some methods...
+	By creating some methods that format the date and time nicer...
 	*** This is not done in these steps. Maybe fill in later. Skip for now. 
-
+	Should look like this when done? :
+	
 Add some numbers that we can click on to choose how many days to display: 
 	Make it so you can pass a number to the url as a parameter: 
 		In routes:
